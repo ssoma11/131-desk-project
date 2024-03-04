@@ -32,7 +32,7 @@ dht.begin();
    //Serial.print(humidity);
    //Serial.print("\n");  
    Serial.println(temp[hour()] + 0.01*random(100));
-   lighting = Serial.parseInt()*255*0.01;
+   lighting = Serial.parseInt()*255*0.1;
    led_out(lighting);
    delay(5000);
  }
@@ -41,6 +41,6 @@ dht.begin();
     analogWrite(3, lighting);
     analogWrite(5, lighting);
     analogWrite(6, lighting);
-    Serial.print("Lighting percent:");  
-    Serial.println(lighting/255);
+    Serial.print("Lighting out of 255:");  
+    Serial.println(lighting);
  }
