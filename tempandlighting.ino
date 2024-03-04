@@ -1,6 +1,3 @@
-#include <TimeLib.h>
-
-#include "DHT.h"  
 #define DHTTYPE DHT11
 uint8_t DHTPin = 2; 
 // Initialize DHT sensor.
@@ -43,7 +40,10 @@ int sensorValue = 0;
     //analogWrite(5, lighting);
     analogWrite(6, lighting);
     Serial.print(",");  
-    Serial.print(lighting);
+    Serial.print(hour());
     Serial.print(",");  
 
+ }
+ void temp(temperature){
+  //if ()
  }
