@@ -1,0 +1,15 @@
+Create or Replace model sensordata.mdl_predict_time
+options(model_type='linear_reg', input_label_cols=['Time']) AS 
+
+select * from 'csc131-416211.sensordata.recordedata'
+where Time<= 16;
+
+SELECT * FROM ML.EVALUATE(MODEL 'sensordata.mdl_predict_time');
+
+select * from 
+ML.WEIGHTS(MODEL 'sensordata.mdl_predict_time');
+
+SELECT * FROM 
+ML.PREDICT(MODEL 'sensordata.mdl_predict_time',
+(select * from 'sensordata.recordedata'
+  where Time > 16));
